@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+/**
+ * Core: Layout
+ * --------------------------------------------------
+ */
+
+/* Box model */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}

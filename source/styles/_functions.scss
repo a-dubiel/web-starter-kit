@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+////
+/// @group Globals
+////
+
+/// Get specific color from `$colors` map.
+///
+/// @author Kris Olszewski
+/// @param {String} $color - Color
+/// @param {String} $tone (base) - Tone
+///
+/// @example scss - Usage
+///   .element-1 {
+///     color: get-color(blue);
+///   }
+///   .element-2 {
+///     color: get-color(blue, light);
+///   }
+/// @example css - CSS Output
+///   .element-1 {
+///     color: #4fc1e9;
+///   }
+///   .element-2 {
+///     color: #7cd1ef;
+///   }
+
+@function get-color($color, $tone: base) {
+  @return map-get(map-get($colors, $color), $tone);
+}

@@ -1,0 +1,46 @@
+<!doctype html>
+<!--[if IE 8]> <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="no-js ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <!-- Character Encoding -->
+  <meta charset="utf-8">
+  <!-- IE Compatible Mode -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Responsive Scaling -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- Turn off phone detection -->
+  <meta name="format-detection" content="telephone=no">
+  <!-- SEO -->
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="http://domain.com/">
+  <title>Page title</title>
+  <meta name="description" content="Page description">
+  <!-- Favicon, Apple Touch Icon -->
+  <link rel="shortcut icon" href="/images/meta/favicon.png">
+  <link rel="apple-touch-icon" href="/images/meta/apple-touch-icon.png">
+  <!-- CSS -->
+  <link href="/styles/main.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <p>Do work son!</p>
+
+  <!-- JavaScript -->
+  <script src="/scripts/main.min.js"></script>
+  <!-- Defer JavaScript -->
+  <script>
+    // http://www.feedthebot.com/pagespeed/defer-loading-javascript.html
+    function downloadDeferJS() {
+      var element = document.createElement('script');
+      element.src = '/scripts/defer.min.js';
+      document.body.appendChild(element);
+    } // downloadDeferJS()
+    if (window.addEventListener) {
+      window.addEventListener('load', downloadDeferJS, false);
+    } else if (window.attachEvent) {
+      window.attachEvent('onload', downloadDeferJS);
+    }
+  </script>
+</body>
+</html>

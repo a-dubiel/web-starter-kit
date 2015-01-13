@@ -1,0 +1,191 @@
+@charset "UTF-8";
+
+////
+/// @group Component: Button
+/// @author Kris Olszewski
+////
+
+/// Button: Base
+$button-base: (
+  font-size         : 14px,
+  line-height       : 20px,
+  min-height        : 34px,
+  padding           : 6px 12px,
+  border-radius     : 3px,
+  text              : #fff,
+  background        : #656d78,
+  border            : #434a54,
+  active-text       : #fff,
+  active-background : #434a54,
+  active-border     : #434a54
+);
+
+/// Button: Sizes
+$button-sizes: (
+  small: (
+    font-size: 12px,
+    line-height: 18px,
+    min-height: 28px,
+    padding: 4px 8px,
+    border-radius: 2px
+  ),
+  large: (
+    font-size: 16px,
+    line-height: 22px,
+    min-height: 40px,
+    padding: 8px 16px,
+    border-radius: 4px
+  )
+);
+
+/// Button: Actions
+$button-actions: (
+  primary: (
+    text              : #fff,
+    background        : #ac92ec,
+    border            : #967adc,
+    active-text       : #fff,
+    active-background : #967adc,
+    active-border     : #967adc
+  ),
+  secondary: (
+    text              : #fff,
+    background        : #5d9cec,
+    border            : #4a89dc,
+    active-text       : #fff,
+    active-background : #4a89dc,
+    active-border     : #4a89dc
+  )
+);
+
+/// Get size properties from `$button-sizes`
+///
+/// @author Kris Olszewski
+/// @param {String} $size - Size
+/// @param {String} $property - Property
+/// @returns {String} $value - Property value
+
+@function get-button-size($size, $property) {
+  @return map-get(map-get($button-sizes, $size), $property);
+}
+
+/// Get action properties from `$button-actions`
+///
+/// @author Kris Olszewski
+/// @param {String} $action - Action
+/// @param {String} $property - Property
+/// @returns {String} $value - Property value
+
+@function get-button-action($action, $property) {
+  @return map-get(map-get($button-actions, $action), $property);
+}
+
+/// Generate `Button` size modifiers
+///
+/// @author Kris Olszewski
+
+@mixin generate-button-size-modifiers() {
+  @each $size, $values in $button-sizes {
+
+    .Button--#{$size} {
+      font-size: get-button-size($size, font-size);
+      line-height: get-button-size($size, line-height);
+      min-height: get-button-size($size, min-height);
+      padding: get-button-size($size, padding);
+      border-radius: get-button-size($size, border-radius);
+    }
+
+  }
+}
+
+/// Generate `Button` action modifiers
+///
+/// @author Kris Olszewski
+
+@mixin generate-button-action-modifiers() {
+  @each $action, $values in $button-actions {
+
+    .Button--#{$action} {
+      background-color: get-button-action($action, background);
+      border-color: get-button-action($action, border);
+      color: get-button-action($action, text);
+
+      &:hover {
+        background-color: get-button-action($action, active-background);
+        border-color: get-button-action($action, active-border);
+        color: get-button-action($action, active-text);
+      }
+    }
+
+  }
+}
+
+/**
+ * Component: Button
+ * --------------------------------------------------
+ */
+
+.Button {
+  background: map-get($button-base, background);
+  border: 1px solid map-get($button-base, border);
+  border-radius: map-get($button-base, border-radius);
+  color: map-get($button-base, text);
+  cursor: pointer;
+  display: inline-block;
+  font-size: map-get($button-base, font-size);
+  min-height: map-get($button-base, min-height);
+  line-height: map-get($button-base, line-height);
+  padding: map-get($button-base, padding);
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color .25s ease, border-color .25s ease, color .25s ease;
+  user-select: none;
+  white-space: normal;
+  vertical-align: middle;
+  -webkit-appearance: none;
+
+  &:hover {
+    background-color: map-get($button-base, active-background);
+    border-color: map-get($button-base, active-border);
+    color: map-get($button-base, active-color);
+  }
+
+  &::-moz-focus-inner {
+    padding: 0;
+    margin: 0;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  }
+
+  &:disabled,
+  &.is-disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: .65;
+  }
+}
+
+/**
+ * Component: Button
+ * Modifier: Size
+ * --------------------------------------------------
+ */
+
+@include generate-button-size-modifiers();
+
+/**
+ * Component: Button
+ * Modifier: Action
+ * --------------------------------------------------
+ */
+
+@include generate-button-action-modifiers();

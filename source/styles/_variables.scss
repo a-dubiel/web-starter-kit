@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+////
+/// @group Globals
+/// @author Kris Olszewski
+////
+
+/// Directory paths
+$paths: (
+  fonts  : "/fonts",
+  images : "/images"
+);
+
+/// Horizontal media query breakpoints
+$breakpoints--horiztonal: (
+  mobile     : 400px,
+  phablet    : 600px,
+  tablet     : 800px,
+  desktop    : 950px,
+  widescreen : 1100px
+);
+
+/// Vertical media query breakpoints
+$breakpoints--vertical: (
+  landscape : 500px,
+  portrait  : 700px
+);
+
+/// Default colors
+$colors: (
+  grey: (
+    base  : #656d78,
+    light : lighten(#656d78, 10%),
+    dark  : darken(#656d78, 10%)
+  ),
+  blue: (
+    base  : #4fc1e9,
+    light : lighten(#4fc1e9, 10%),
+    dark  : darken(#4fc1e9, 10%)
+  ),
+  green: (
+    base  : #a0d468,
+    light : lighten(#a0d468, 10%),
+    dark  : darken(#a0d468, 10%)
+  ),
+  red: (
+    base  : #ed5565,
+    light : lighten(#ed5565, 10%),
+    dark  : darken(#ed5565, 10%)
+  )
+);
+
+/// Background colors
+$colors--bg: (
+  body : #fff
+);
