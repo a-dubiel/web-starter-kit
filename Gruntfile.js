@@ -78,7 +78,6 @@ module.exports = function(grunt) {
 
   /* Dependencies */
   require('time-grunt')(grunt);
-  require('connect-php')(grunt);
   require('load-grunt-tasks')(grunt);
 
   /* Tasks */

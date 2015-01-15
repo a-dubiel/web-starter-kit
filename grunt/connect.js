@@ -23,10 +23,11 @@ exports.task = {
       hostname: 'localhost',
       base: '<%= path.build %>',
       open: {
-        target: 'http://localhost:8000/'
+        target: 'http://localhost:8000/index.php'
       },
       middleware: function(connect, options) {
         var middlewares = [];
+        var phpMiddleware = require('connect-php');
         var directory = options.directory || options.base[options.base.length - 1];
         if (!Array.isArray(options.base)) {
           options.base = [options.base];
