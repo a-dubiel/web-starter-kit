@@ -109,7 +109,7 @@ In terminal, go to your project directory and run `grunt server`. From now on yo
 
 It is up to you to add vendors per project requirements and link to them from views. Feel free to use Bower for your dependencies.
 
-**Recommended vendords**
+**Recommended vendors**
 * [Normalize](http://necolas.github.io/normalize.css/)
 * [jQuery](http://jquery.com/)
 * [Velocity](http://julian.com/research/velocity/)
