@@ -3,16 +3,10 @@
   "title": "Web Starter Kit",
   "version": "0.0.1",
   "author": {
-    "name": "Kris Olszewski",
-    "url": "http://www.kolszewski.com/"
+    "name": "Andrzej Dubiel",
+    "url": "http://adubiel.me/"
   },
   "description": "Project Description",
-  "contributors": [
-    {
-      "name": "Contributor Name",
-      "email": "alias@domain.com"
-    }
-  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/USER/PROJECT"
