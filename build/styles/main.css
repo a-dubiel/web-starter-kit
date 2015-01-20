@@ -1,6 +1,6 @@
 /**
  * Web Starter Kit v0.0.1
- * Wednesday, January 14th, 2015, 7:58:09 PM
+ * Saturday, January 17th, 2015, 8:43:28 PM
  * 
  * 2014 Kris Olszewski | http://www.kolszewski.com/
  */
@@ -112,7 +112,8 @@ a
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
-    transition: background-color .25s ease, border-color .25s ease, color .25s ease;
+    -webkit-transition: background-color .25s ease, border-color .25s ease, color .25s ease;
+            transition: background-color .25s ease, border-color .25s ease, color .25s ease;
     text-align: center;
     vertical-align: middle;
     white-space: normal;
